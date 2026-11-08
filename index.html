@@ -1,0 +1,276 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Feliz Aniversário Alexandre Dino!</title>
+
+<style>.galeria {
+  width: 100%;
+  overflow: hidden;
+  margin-top: 25px;
+  padding: 10px 0;
+}
+
+.fotos {
+  display: flex;
+  width: max-content;
+  gap: 15px;
+  animation: passarFotos 25s linear infinite;
+}
+
+.fotos img {
+  width: 180px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 18px;
+  box-shadow: 0 4px 15px #0003;
+  animation: zoomFoto 4s ease-in-out infinite alternate;
+}
+
+@keyframes passarFotos {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes zoomFoto {
+  from { transform: scale(0.96); }
+  to { transform: scale(1.04); }
+}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(145deg, #090909, #350000, #090909);
+  color: white;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+}
+
+h1 {
+  color: #ffd700;
+  font-size: 35px;
+}
+
+.emoji {
+  font-size: 65px;
+  animation: pulse 1.5s infinite;
+}
+
+button {
+  background: linear-gradient(90deg, #ffcc00, #ff8800);
+  border: none;
+  padding: 16px 30px;
+  border-radius: 30px;
+  font-size: 17px;
+  font-weight: bold;
+  color: #250000;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.card {
+  display: block
+  background: rgba(255,255,255,0.10);
+  border: 1px solid #ffd700;
+  border-radius: 20px;
+  padding: 25px;
+  max-width: 450px;
+  animation: aparecer 1s ease;
+}
+
+.card h2 {
+  color: #ffd700;
+}
+
+.card p {
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.assinatura {
+  color: #ffd700;
+  font-weight: bold;
+}
+
+.confete {
+  position: fixed;
+  top: -20px;
+  font-size: 22px;
+  animation: cair 4s linear forwards;
+  pointer-events: none;
+}
+
+@keyframes cair {
+  to {
+    transform: translateY(110vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+@keyframes aparecer {
+  from {opacity: 0; transform: scale(.8);}
+  to {opacity: 1; transform: scale(1);}
+}
+
+@keyframes pulse {
+  50% {transform: scale(1.15);}
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <div id="inicio">
+    <div class="emoji"></div>
+    <h1>Uma surpresa especial!</h1>
+    <p>Preparei algo com muito carinho para você pai um abraço assinado júnior, Arthur, Joana.</p>
+    <button onclick=document.getElementById("musica").play();>
+      ABRIR SURPRESA 
+  
+    </button>
+  </div>
+
+  <div class="card" id="mensagem">
+    <div class="emoji">🎁</div>
+
+    <h1>Feliz Aniversário!</h1>
+
+    <h2>Alexandre Dino 🎁</h2>
+
+    <p>
+      Pai, hoje é um dia muito especial!
+      Quero desejar muita felicidade,
+      saúde, paz e muitos anos de vida.
+    </p>
+
+    <p>
+      Feliz aniversário, meu pai! ❤️🥹
+
+Pai, hoje é o seu dia, mas quem ganhou o maior presente fui eu, por ter você na minha vida.
+
+Talvez eu não consiga demonstrar todos os dias o quanto você é importante para mim, mas quero que saiba que tenho um orgulho enorme de ser seu filho. Obrigado por cada esforço.  cada preocupação e por todas as vezes que você fez o possível para me ver bem, mesmo quando ninguém percebia o quanto estava sendo difícil para você.
+
+Eu sei que nem sempre sou o filho perfeito, que às vezes erro, que às vezes não demonstro o carinho que deveria, mas nunca duvide do amor e da admiração que tenho por você.
+
+Se um dia eu conseguir ser metade do homem que você é, já vou ter muito orgulho de mim mesmo.
+
+Pai, eu queria ter palavras suficientes para agradecer por tudo, mas acho que nem todas as palavras do mundo seriam capazes de explicar o quanto você significa para mim.
+
+Meu maior desejo é poder retribuir um dia tudo aquilo que você já fez por mim. Quero ter muitos anos ao seu lado, viver muitos momentos juntos e ainda poder te dar muitos motivos para sorrir.
+
+Eu te amo, pai! ❤️
+
+Nunca se esqueça: independentemente da minha idade, eu sempre vou precisar do seu abraço, dos seus conselhos e da sua presença.
+
+Feliz vida! Que Deus te abençoe, te proteja e te dê muitos anos de vida. Você merece o mundo! ❤️🥹
+    </p>
+
+    <p>
+      Você é muito especial para mim.
+      Que seu dia seja maravilhoso!
+    </p>
+
+    <p class="assinatura">
+      Com muito carinho! ♥️
+    </p>
+
+    <div class="emoji">Arthur, Júnior, Joana</div>
+  </div>
+
+</div>
+
+<script>
+function abrirSurpresa() {
+  document.getElementById("inicio").style.display = "none";
+  document.getElementById("mensagem").style.display = "block";
+
+  const simbolos = ["🎉", "❤️", "✨", "🎊", "⭐"];
+
+  for (let i = 0; i < 45; i++) {
+    const confete = document.createElement("div");
+
+    confete.className = "confete";
+    confete.textContent =
+      simbolos[Math.floor(Math.random() * simbolos.length)];
+
+    confete.style.left = Math.random() * 100 + "vw";
+    confete.style.animationDelay = Math.random() * 3 + "s";
+
+    document.body.appendChild(confete);
+
+    setTimeout(() => confete.remove(), 7000);
+  }
+}
+</script>
+
+<audio id="musica" loop>
+  <source src="musica.mp3" type="audio/mpeg">
+</audio>
+
+<section 
+  <h2></h2>
+
+  <label class="adicionar-fotos">
+    + Adicionar fotos
+    <input type="file" id="selecionarFotos" accept="image/*" multiple hidden>
+  </label>
+
+  <div class="faixa-fotos">
+    <div class="lista-fotos" id="listaFotos">
+    </div>
+  </div>
+</section>
+
+<style>
+.album-fotos {
+  width: 100%;
+  padding: 20px 0;
+  overflow: hidden;
+  text-align: center;
+}
+
+.album-fotos h2 {
+  margin-bottom: 15px;
+}
+
+.adicionar-fotos {
+  display: inline-block;                                                    
+</style>
+
+<script></script
+</head>
+<body>
+    
+</body>
+</html><div class="galeria">
+  <div class="fotos">
+    <img src="foto4.jpg">
+    <img src="foto2.jpg">
+    <img src="foto3.jpg">
+    <img src="foto1.jpg">
+
+    <!-- Repetição para movimento infinito -->
+    <img src="foto4.jpg">
+    <img src="foto2.jpg">
+    <img src="foto3.jpg">
+    <img src="foto1.jpg">
+  </div>
+</div>
